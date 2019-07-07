@@ -1,0 +1,21 @@
+version: '3.4'
+services:
+  plexdrive:
+    container_name: plexdrive
+    build: .
+    restart: always
+    network_mode: "bridge01"
+    volumes:
+      - /home/ci/workspaces/plexdrive/config:/config
+      - /mnt/google_drive:/data:shared
+    privileged: true
+    devices:
+      - /dev/fuse
+    cap_add:
+      - MKNOD
+      - SYS_ADMIN
+    environment:
+      - PUID=1002
+      - PGID=1003
+      - TZ=Asia/Ho_Chi_Minh
+      #- RUN_OPTS=<additional arguments for running plexdrive>
