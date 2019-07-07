@@ -5,7 +5,7 @@ Docker image for running [plexdrive](https://github.com/dweidenfeld/plexdrive)
 - Plexdrive 5.0.0
 
 
-## Usage
+## Usage Sample
 
 ```yaml
 version: '3'
@@ -38,3 +38,8 @@ docker-compose exec <service_name> plexdrive_setup
 ```
 
 Once you finish typing your API token, shell stops responding. No worries, it is expected. Simply escape by ```Ctrl+C```, and go to ```/config```. You will find two json files generated. Container running in background proceeds to execute mounting command for plexdrive. You can now access google drive contents via volume-mapped ```/your/mounting/point```.
+
+
+```ref
+https://docs.docker.com/compose/gettingstarted/ --> build Dockerfile in docker-compose.yaml
+https://docs.docker.com/compose/startup-order/ --> startup order
